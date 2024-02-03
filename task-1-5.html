@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating a Simple Quiz App</title>
+</head>
+
+<body>
+    <script>
+        const quizQuestions = [
+            {
+                question: "What is the capital of the United Kingdom?",
+                choices: ["London", "Paris", "Nairobi"],
+                correct: 0
+            },
+            {
+                question: "How many days in the week?",
+                choices: ["5", "7", "6"],
+                correct: 1
+            },
+            {
+                question: "What is the capital of France?",
+                choices: [ "Berlin","London","Paris" ],
+                correct: 2
+            },
+        ];
+
+        function shuffleQuestions(questions) {
+            return questions.sort(() => Math.random() - 0.5);
+        }
+
+        function displayQuestions(questions) {
+            let score = 0;
+
+            shuffleQuestions(questions).forEach((question, index) => {
+                console.log(`${index + 1}. ${question.question}`);
+
+                question.choices.forEach((choice, choiceIndex) => {
+                    console.log(`${String.fromCharCode(97 + choiceIndex)}. ${choice}`);
+                });
+
+                const response = prompt("Enter Your Answer (a, b, c, or d):");
+                if (response && response.toLowerCase() === String.fromCharCode(97 + question.correct)) {
+                    score++;
+                    console.log("Correct!");
+                } else {
+                    console.log(`Incorrect! The correct answer is ${String.fromCharCode(97 + question.correct)}.`);
+                }
+            });
+
+            console.log(`You scored ${score} out of ${questions.length}.`);
+        }
+        
+        // Call the function to start the quiz
+        displayQuestions(quizQuestions);
+    </script>
+</body>
+
+</html>

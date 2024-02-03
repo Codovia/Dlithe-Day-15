@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a simple Shopping Cart</title>
+</head>
+
+<body>
+    <script>
+        let cart = [
+            { productionName: "Production 1", price: 10, quantity: 2 },
+            { productionName: "Production 2", price: 5, quantity: 1 },
+            { productionName: "Production 3", price: 7, quantity: 3 }
+        ];
+
+        function calculateTotalCost(){
+            let totalCost = cart.reduce((total,item)=> total + (item.price * item.quantity),0);
+            return totalCost;
+        }
+
+        function addItem(productionName, price, quantity){
+            cart.push({productionName,price,quantity});
+        }
+        function removeItem(index){
+        cart.splice(index,1);
+        }
+        function updateQuantity(index,newQuantity){
+            cart[index].quantity = newQuantity;
+        }
+
+    </script>
+</body>
+
+</html>

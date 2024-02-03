@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managing a Contact Book</title>
+</head>
+
+<body>
+    <script>
+        let contacts = [
+            { name: "John Doe", email: "john@example.com", phone: "1234567890", address: "123 Main St" },
+            { name: "Jane Smith", email: "jane@example.com", phone: "4567890123", address: "456 Elm St" }
+        ];
+        function searchContact(query) {
+
+            let searchResults = contacts.filter(contact =>
+                contact.name.toLowerCase().includes(query.toLowerCase()) ||
+                contact.email.toLowerCase().includes(query.toLowerCase())
+            );
+            return searchResults;
+        }
+
+        function addContact(name, email, phone, address) {
+            contacts.push({ name, email, phone, address });
+        }
+
+        function editContactEmail(index, newEmail) {
+            contacts[index].email = newEmail;
+        }
+    </script>
+</body>
+
+</html>

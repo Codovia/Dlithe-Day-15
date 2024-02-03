@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementing a To-do list</title>
+</head>
+
+<body>
+    <script>
+        let tasks = [
+            { description: "Task 1", priority: "High", completed: false },
+            { description: "Task 2", priority: "Medium", completed: true },
+            { description: "Task 3", priority: "Low", completed: false }
+        ];
+        function addTask(description, priority){
+            tasks.push({description, priority, completed:false});
+        }
+        function markAsCompleted(index){
+            tasks[index].completed=true;
+        }
+        function filterTasksByPriority(priority){
+            let highPriorityTasks = tasks.filter(task => task.priority ===priority);
+            return highPriorityTasks;
+        }
+    </script>
+
+</body>
+
+</html>
