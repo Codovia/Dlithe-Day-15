@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creating a Playlist</title>
+    <style>
+        body{
+            background-color: chartreuse;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -24,5 +30,23 @@
             songs.sort(()=>Math.random()-1);
         }
     </script>
+    <h2>
+Creating a Playlist:<small>Create an array of song objects with title, artist, and duration properties.
+Allow users to add, remove, and shuffle songs using array methods.</small><br><br>
+        <li>Left Click on webpage. and select inspect option.</li> 
+        <li>Select console in top right Navbar</li>
+        <ol type ="1">
+            <li>To get the all the music type "songs" in console.</li>
+            <li>To add Songs use this format in console : 
+                "addSong(title,artist,duration);" in the place of title,artist,duration fill your faviorite song details.</li>
+            <li>To remove Songs use this format in console:
+                "removeSong(index);" in the place of index type the index of the song yo want to remove from the array.
+            </li>
+            <li>To shuffle the music in the array call this function inthe console: 
+                "shuffleSongs();" 
+                
+            </li>
+        </ol>
+    </h2>
 </body>
 </html>
